@@ -15,12 +15,13 @@ Here we give an explanation of the Robust Image Classiffier we have developed. I
 - Finally, Multi-Shield computes the alignment scores using cosine similarity, selecting the class with the highest score as the final prediction from the CLIP model (Step 5).
 ##### 3. Multi-Shield Final Decision
 - In the final phase, Multi-Shield compares the predictions from the unimodal image classifier and the multimodal CLIP model (Step 6), each capturing distinct patterns in the data. If both models agree, Multi-Shield outputs their shared prediction; if not, it abstains (Step 7).
+
 ### Multi-Shield in Clean scenario (i.e., no adversarial perturbation is applied)
 ![Image1](MS_clean_scenario.jpg)
 ### Multi-Shield in Adversarial scenario (i.e., adversarial perturbation is applied)
 ![Image2](MS_adversarial_scenario.jpg)
 ## Dependencies
-Instead of providing users with each separate dependency, we will provide our entire environment file.
+Instead of providing users with each separate dependency, we provide our entire environment file.
 
 ```sh
 name: multishield
@@ -48,7 +49,7 @@ dependencies:
 ```
 > **NOTE:** The environment file must be saved under the extension .yml!
 
-To create desired environment type this command in anaconda terminal:
+To create the desired environment, type this command in the Anaconda terminal:
 ```shell
 conda env create -f env.yml
 ```
