@@ -1,0 +1,12 @@
+{
+    "seed": 1233,
+    "experiments": [
+        {
+            "clip_model_id":"tangake_finetuned",
+            "dataset": "cifar10",
+            "model": "carmon2019",
+            "n_samples": 4,
+            "batch_size": 2
+        }
+    ]
+}
