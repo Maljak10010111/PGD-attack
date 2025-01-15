@@ -1,9 +1,10 @@
 # Projected Gradient Descent (PGD) Attack
 
 
-Here, I provide my custom implementation of the PGD attack, incorporating various optimizers and learning rate schedulers. Specifically, this is an untargeted PGD attack using the 𝐿∞ norm.
+Here, I provide my custom implementation of the PGD attack, incorporating various optimizers and learning rate schedulers.  
+Specifically, this is an untargeted PGD attack using the 𝐿∞ norm.
 
-![Image1](PGD.png)
+![Image1](PGD.png)  
 *Biggio, B., et al. (2013). Evasion attacks against machine learning at test time.*
 ## Dependencies
 Instead of providing users with each separate dependency, I provide the entire environment file.
