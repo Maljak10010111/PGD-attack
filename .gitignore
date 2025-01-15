@@ -1,6 +1,3 @@
 data/
 checkpoints/
-.idea/
-.DS_Store
-robustbench_script.py
-cifar10_extraction.py
+PGD_e.py

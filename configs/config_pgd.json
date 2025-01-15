@@ -1,0 +1,16 @@
+{
+    "seed": 1233,
+    "experiments": [
+        {
+            "dataset": "cifar10",
+            "model": "standard",
+            "n_samples": 20,
+            "batch_size": 4,
+            "attack_name": "PGD",
+            "attack_steps": 40,
+            "epsilon": 8,
+            "optimizer": "Adam",
+            "scheduler": "multistep"
+        }
+    ]
+}
