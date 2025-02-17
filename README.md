@@ -10,7 +10,7 @@ All of these PGD implementations represent an untargeted PGD attack using the ğ
 
 
 ![Image1](PGD.png)
-*Biggio, B., et al. (2013). Evasion attacks against machine learning at test time.*
+<br>*Biggio, B., et al. (2013). Evasion attacks against machine learning at test time.*
 ## Dependencies
 Instead of providing users with each separate dependency, I provide the entire environment file.
 
