@@ -63,4 +63,4 @@ The PGD attack is executed by calling main function:
 ```sh
 python main_func.py --device=cuda --config=configs/config_pgd.json
 ```
-Comment or uncomment python scripts for the desired version of the PGD attack!
+To choose desired implementation of the PGD attack, comment or uncomment imports of corresponding python scripts in the main_func.py.
