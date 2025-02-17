@@ -1,7 +1,13 @@
 # Projected Gradient Descent (PGD) Attack
 
 
-Here, I provide my custom implementation of the PGD attack, incorporating various optimizers and learning rate schedulers. Specifically, this is an untargeted PGD attack using the 𝐿∞ norm.
+Here, I provide my three custom implementations of the PGD attack:<br>
+1. The first version provides a classic PGD attack implementation, returning the last adversarial examples found. <br>
+2. The second version is an enhanced version of the first, where attack returns the example that maximizes the error the most (i.e., the best adversarial example).<br> 
+3. Lastly, the third version incorporates various optimizers and learning rate schedulers.
+
+All of these PGD implementations represent an untargeted PGD attack using the 𝐿∞ norm.
+
 
 ![Image1](PGD.png)
 *Biggio, B., et al. (2013). Evasion attacks against machine learning at test time.*
@@ -30,7 +36,7 @@ To create the desired environment, type this command in the Anaconda terminal:
 conda env create -f env.yml
 ```
 
-## Running experiments
+## Running the code
 Before executing main_func.py, one should choose which model, dataset, scheduler, and optimizer to use.
 
 #### Configuration
@@ -53,7 +59,8 @@ Before executing main_func.py, one should choose which model, dataset, scheduler
 }
 ```
 
-Experiments are run by calling main function:
+The PGD attack is executed by calling main function:
 ```sh
 python main_func.py --device=cuda --config=configs/config_pgd.json
 ```
+Comment or uncomment python scripts for the desired version of the PGD attack!

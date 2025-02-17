@@ -1,4 +1,4 @@
-# README how to run the project
+# README how to run the code
 
 import json
 import torch
@@ -6,7 +6,9 @@ import argparse
 from ingredients.models import get_local_cifar10_model
 from ingredients.dataset import get_dataset_loaders
 from ingredients.utilities import set_seed
-from PGD import PGD_Attack
+# from PGD_last_adv_example import PGD_Attack
+# from PGD_best_adv_example import PGD_Attack
+from PGD_last_example_using_optim_and_sched import PGD_Attack
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -123,7 +125,10 @@ def execute():
 
         model = model.to(device)
 
-        pgd_attack = PGD_Attack(model, device, epsilon=epsilon, iterations=attack_steps, optimizer=optimizer, scheduler=scheduler)
+        if PGD_Attack.__module__ == "PGD_last_adv_example" or PGD_Attack.__module__ == "PGD_best_adv_example":
+            pgd_attack = PGD_Attack(model, device, epsilon=epsilon, iterations=attack_steps)
+        else:
+            pgd_attack = PGD_Attack(model, device, epsilon=epsilon, iterations=attack_steps, optimizer=optimizer, scheduler=scheduler)
 
         clean_accuracy = accuracy(model, dataloader, device, None, n_samples)
         print(f'Clean Accuracy of {model_name} model: ', clean_accuracy * 100)

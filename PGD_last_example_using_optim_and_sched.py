@@ -26,7 +26,7 @@ class PGD_Attack(nn.Module):
         super(PGD_Attack, self).__init__()
 
         self.epsilon = epsilon / 255
-        self.lr = self.epsilon / 2
+        self.lr = self.epsilon / 4
         self.attack_steps = iterations
         self.model = model
         self.device = device
@@ -60,7 +60,11 @@ class PGD_Attack(nn.Module):
 
             manipulated_images = manipulated_images + self.lr * grad
 
-            manipulated_images = clean_images + torch.clamp(manipulated_images - clean_images, min=-self.epsilon, max=self.epsilon)
+            perturbation = manipulated_images - clean_images
+
+            perturbation = torch.clamp(perturbation, min=-self.epsilon, max=self.epsilon)
+
+            manipulated_images = clean_images + perturbation
 
             manipulated_images = torch.clamp(manipulated_images, min=0, max=1)
 

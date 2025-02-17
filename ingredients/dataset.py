@@ -27,7 +27,7 @@ def get_dataset_loader_cifar10(batch_size: int, n_examples: int):
         ]
     )
 
-    dataset = torchvision.datasets.CIFAR10(root='./data', train=True,
+    dataset = torchvision.datasets.CIFAR10(root='./data', train=False,
                                                            download=True, transform=transform)
 
     subset_indices = random.sample(range(len(dataset)), n_examples)
